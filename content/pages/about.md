@@ -7,7 +7,7 @@ hide_copyright: true
 Summary: Data science and fun!
 Status: published
 
-I am Saurav, a masters of data science student at [Data Science Institute, University of Virginia](https://dsi.virginia.edu). 
+I am Saurav, a masters of data science student at the [Data Science Institute, University of Virginia](https://dsi.virginia.edu). 
 
 I come from a web development background where I helped a reknowned bank in Asia replace there internal legacy web interface with flexible cloud based web services using [Spring Boot](https://spring.io/projects/spring-boot) and [Pivotal Cloud Foundry](https://pivotal.io/platform). While there, I developed systems that were interfaces for data storage and retrieval which was in turn used for analytics to streamline processes and reduce risk. This turned me on to how data can be a valuable commodity and initiated my journey into data science.
 
