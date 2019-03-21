@@ -16,3 +16,5 @@ I am motivated by the idea of building accessible pieces of technology that assi
 In my free time, I explore ways technology is affecting us as humans. Also, I am into science fiction!
 
 You can find my updated [CV](/files/cv.pdf) here (pdf).
+
+More me -> [profile](https://datascience.virginia.edu/people/saurav-sengupta/profile)

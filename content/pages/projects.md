@@ -44,5 +44,5 @@ Status: published
 
 ## Modeling quality of barbell lifts using accelerometer data
 * The goal was to use data from accelerometers on the belt, forearm, arm, and dumbbell of 6 participants, to predict how well they do barbell lifts.
-* Tested accuracy of models built using Tree Algorithm, Random Forest, and Model Stacking using the caret package in R. 
+* Tested accuracy of models built using **Tree Algorithm**, **Random Forest**, and **Model Stacking** using the **caret** package in R. 
 * [GitHub Pages](https://ssen7.github.io/practical-machine-learning-coursera/) Link.
