@@ -125,14 +125,14 @@ AUTHOR_IMAGE = '/images/download.jpg'
 TAGLINE = 'Deep learning and data science'
 META_DESCRIPTION = 'my personal website'
 # DISQUS_SITENAME = 'ssen7'
-# COPYRIGHT_YEARS = '2014 &ndash; 2018'
-# COPYRIGHT_FOOTER = (
-#     '<p>'
-#     '&copy; ' + SITENAME + '  ' + COPYRIGHT_YEARS +
-#     '. Published with <a href="https://github.com/getpelican/pelican">Pelican</a>.<br />'
-#     'This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
-#     '</p>'
-# )
+COPYRIGHT_YEARS = '2014 &ndash; 2019'
+COPYRIGHT_FOOTER = (
+    '<p>'
+    '&copy; ' + SITENAME + '  ' + COPYRIGHT_YEARS +
+    '. Published with <a href="https://github.com/getpelican/pelican">Pelican</a>.<br />'
+    'This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.'
+    '</p>'
+)
 
 ARTICLE_URL = 'blog/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{slug}/index.html'
