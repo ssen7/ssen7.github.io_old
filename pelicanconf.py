@@ -122,7 +122,7 @@ INTERNAL = False
 COVER_IMG_URL = '/images/home-bg.jpg'
 AUTHOR_EMAIL = 'sauravsengupta7@gmail.com'
 AUTHOR_IMAGE = '/images/download.jpg'
-TAGLINE = 'Deep learning and data science'
+TAGLINE = 'Masters of Data Science at DSI, UVA.'
 META_DESCRIPTION = 'my personal website'
 # DISQUS_SITENAME = 'ssen7'
 COPYRIGHT_YEARS = '2019 &ndash; 2019'
@@ -160,6 +160,7 @@ MENUITEMS = [
     ('About', '/'),
     ('Projects', '/projects.html'),
     ('Blog', '/blog/'),
+    ('Publications', '/publications.html'),
     ('Resume', '/files/cv.pdf'),
 ]
 # DISPLAY_PAGES_ON_MENU = True
