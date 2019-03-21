@@ -3,7 +3,7 @@ Date: 2019-03-21
 Category: welcome
 Tags: blog, pelican
 Slug: welcome
-Summary: Welcome to my blog where I talk about data minining, machine learning, reinforcement learning and other types of learning
+Summary: Welcome to my blog where I talk about data minining, machine learning, reinforcement learning and other types of learning.
 Status: published
 
 

@@ -125,7 +125,7 @@ AUTHOR_IMAGE = '/images/download.jpg'
 TAGLINE = 'Deep learning and data science'
 META_DESCRIPTION = 'my personal website'
 # DISQUS_SITENAME = 'ssen7'
-COPYRIGHT_YEARS = '2014 &ndash; 2019'
+COPYRIGHT_YEARS = '2019 &ndash; 2019'
 COPYRIGHT_FOOTER = (
     '<p>'
     '&copy; ' + SITENAME + '  ' + COPYRIGHT_YEARS +
@@ -160,6 +160,7 @@ MENUITEMS = [
     ('About', '/'),
     ('Projects', '/projects.html'),
     ('Blog', '/blog/'),
+    ('Resume', '/files/cv.pdf'),
 ]
 # DISPLAY_PAGES_ON_MENU = True
 
