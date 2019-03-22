@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Steps for making the website using Pelican and Github." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@svenkreiss" />
+    <meta name="twitter:creator" content="@svenkreiss" />
+    <meta name="twitter:title" content="Making the website using Pelican and GitHub: Part 1" />
+    <meta name="twitter:description" content="Steps for making the website using Pelican and Github." />
+    <meta name="twitter:image:src" content="/images/blog_snapshot.png" />
+    <meta name="twitter:domain" content="svenkreiss.com" />
+
+    <meta property="og:title" content="Making the website using Pelican and GitHub: Part 1" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Steps for making the website using Pelican and Github." />
+    <meta property="og:image" content="/images/blog_snapshot.png" />
+    <meta property="og:site_name" content="svenkreiss.com" />
+    <meta property="og:url" content="/blog/making_the_blog/" />
+
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Saurav Sengupta Full Atom Feed"/>
+
+        <title>Making the website using Pelican and GitHub: Part 1 - Saurav Sengupta</title>
+
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.css" integrity="sha384-VEnyslhHLHiYPca9KFkBB3CMeslnM9CzwjxsEbZTeA21JBm7tdLwKoZmCt3cZTYD" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.js" integrity="sha384-O4hpKqcplNCe+jLuBVEXC10Rn1QEqAmX98lKAIFBEDxZI0a+6Z2w2n8AEtQbR4CD" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/theme/css/pure.css?v=0.1.0" />
+<link rel="stylesheet" href="/theme/css/pygments.css" />
+
+    <!-- for pelican_dynamic plugin -->
+    <!-- end pelican_dynamic -->
+
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <a href="/blog/author/saurav-sengupta/" title="See posts by Saurav Sengupta">
+                <img class="avatar" alt="Saurav Sengupta" src="https://www.gravatar.com/avatar/7886ef373056b9dbd24606c7162cc471?s=140">
+            </a>
+            <h2 class="article-info">Saurav Sengupta</h2>
+
+
+
+            <p class="article-date">March 21, 2019</p>
+
+            <a class="header-article-home" href="/blog/">&larr;Back to Blog</a>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Making the website using Pelican and GitHub: Part&nbsp;1</h1>
+                </header>
+            </section>
+
+            <!-- ### Making the blog -->
+
+<!-- ### Reason
+
+Have a place to put up my data science portfolio.
+
+That's it. -->
+
+<p><img src="/images/blog_snapshot.png" width="1500" title="blogs-snapshot" alt="blogs-snapshot"></p>
+<p>Me and many other data science enthusiasts who want to showcase their work, need a platform to do it. I needed a platform that is easily updatable, customizable and supports jupyter&nbsp;notebooks. </p>
+<p>Pelican is a python based static site generator that fulfilled all the above criteria. It is open-source, has many plugins that can do things like add support for bibtex, can show jupyter notebooks and a whole lot else. Its also easy to customize without worrying about a lot of front end&nbsp;stuff.</p>
+<p>In a series of posts, I will detail the making of this website in the hopes that it might help some of you folks looking to make an easy to use website free of&nbsp;cost.</p>
+<h3>Setup your github.io repository on&nbsp;GitHub</h3>
+<p>On GitHub, create a new repository with the name username.github.io where username is your GitHub username. Do not worry about creating branches or some such. You can do it on your local&nbsp;system.</p>
+<h3>Project&nbsp;Setup</h3>
+<p>Now create a folder where you can store all your website materials. This makes it easy to compartmentalize stuff. I named it <strong>WebApp</strong>.</p>
+<p>Inside this folder, open your terminal or command line, whatever you use for running git commands and clone your&nbsp;repository.</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+</pre></div>
+
+
+<p>Go inside your&nbsp;repository.</p>
+<div class="highlight"><pre><span></span>cd YOUR_USERNAME.github.io
+</pre></div>
+
+
+<p>Create local branch named &#8216;pelican&#8217; where you&#8217;ll store your pelican configuration&nbsp;files.</p>
+<div class="highlight"><pre><span></span>git checkout -b pelican
+</pre></div>
+
+
+<h3>Install Pelican and other helper&nbsp;packages</h3>
+<p>It is always a good idea to use separate environments for projects. I used Anaconda environments. You can use virtualenv&nbsp;also.</p>
+<div class="highlight"><pre><span></span>conda create --name mywebsite
+</pre></div>
+
+
+<p>Activate this&nbsp;environment.</p>
+<div class="highlight"><pre><span></span>source activate mywebsite
+</pre></div>
+
+
+<p>Now you can download the packages you need for making this website. PyPI or pip makes this a one step&nbsp;process.</p>
+<div class="highlight"><pre><span></span>pip install pelican markdown ghp-import
+</pre></div>
+
+
+<h3>You are ready to&nbsp;start!</h3>
+<p>Use</p>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+
+
+<p>Here is a screenshot of what options to&nbsp;choose.</p>
+<p><img src="/images/quickstart_snapshot.jpg" width="1500" title="Snapshot for quickstart" alt="Snapshot for quickstart"></p>
+<p>Remember all of this is happening inside your <span class="caps">USERNAME</span>.github.io folder that you checked out&nbsp;before.</p>
+<p>Your website is almost&nbsp;ready!</p>
+<h3>Start building&nbsp;content</h3>
+<p>Once the quickstart process is complete, there will be a folder called <strong>content</strong> created for you. Create a folder called <strong>posts</strong> inside this&nbsp;folder.</p>
+<p>Inside <strong>posts</strong> create a quick markdown file and fill it like the&nbsp;following.</p>
+<div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">Welcome</span><span class="o">!</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">21</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">welcome</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">blog</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">welcome</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">Welcome</span> <span class="n">to</span> <span class="n">my</span> <span class="n">blog</span> <span class="n">where</span> <span class="n">I</span> <span class="n">talk</span> <span class="n">about</span> <span class="n">data</span> <span class="n">minining</span><span class="o">,</span> <span class="n">machine</span> <span class="n">learning</span><span class="o">,</span> <span class="n">reinforcement</span> <span class="n">learning</span> <span class="n">and</span> <span class="n">other</span> <span class="n">types</span> <span class="n">of</span> <span class="n">learning</span><span class="o">.</span>
+<span class="n">Status</span><span class="o">:</span> <span class="n">published</span>
+
+
+<span class="n">Welcome</span> <span class="n">to</span> <span class="n">my</span> <span class="n">personal</span> <span class="n">blog</span><span class="o">!</span>
+</pre></div>
+
+
+<p>To see how it looks do the&nbsp;following:</p>
+<div class="highlight"><pre><span></span>make html &amp;&amp; make serve
+</pre></div>
+
+
+<p>It should be up on <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+<h3>Publishing to&nbsp;GitHub</h3>
+<p>Before committing, its good practice to have a .gitignore file in your directory.
+My .gitignore looks like&nbsp;this.</p>
+<div class="highlight"><pre><span></span>## ignore files
+/output/
+/node_modules/
+/__pycache__/
+</pre></div>
+
+
+<p>I&#8217;ll address the &#8216;node_modules&#8217; in a later&nbsp;blog.</p>
+<p>Use the following commands one after the another to commit all of the generated stuff to&nbsp;GitHub. </p>
+<div class="highlight"><pre><span></span>git add -A
+git commit -m &quot;my first blog&quot;
+git push
+</pre></div>
+
+
+<p>What comes next will blow your&nbsp;mind! </p>
+<p>Using just one command, you can generate a working github.io&nbsp;website.</p>
+<div class="highlight"><pre><span></span>make github
+</pre></div>
+
+
+<p>It usually takes a little bit of time to show up. But now you have a working website that you can show to&nbsp;others..</p>
+<p>Or maybe not. Your&nbsp;choice.</p>
+<p>Part 2 will cover adding themes and plugins to your Pelican&nbsp;website.</p>
+<p>Stay&nbsp;tuned.</p>
+
+            <p class="post-footer">
+                // filed
+under                <a class="post-category" href="/blog/tag/pelican/">pelican</a>
+                <a class="post-category" href="/blog/tag/python/">python</a>
+                in <a class="post-category"
+                    href="/blog/category/builds/">builds</a>&nbsp;&nbsp;&nbsp;
+
+                <span style="display:inline-block;">
+                    // share on <a
+                        href="https://twitter.com/share?text=%22Making%20the%20website%20using%20Pelican%20and%20GitHub%3A%20Part%C2%A01%3A%20Steps%20for%20making%20the%20website%20using%20Pelican%20and%C2%A0Github.%22&amp;hashtags=pelican%2Cpython"
+                        target="_blank">
+                        <i class="fa fa-twitter fa-lg"></i> Twitter
+                    </a>
+                </span>
+            </p>
+            <div class="hr"></div>
+
+
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Saurav Sengupta  2019 &ndash; 2019. Published with <a href="https://github.com/getpelican/pelican">Pelican</a>.<br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        renderMathInElement(document.body);
+    </script>
+
+    <!-- for pelican_dynamic plugin -->
+
+
+
+</body>
+</html>
