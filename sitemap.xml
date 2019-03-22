@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2019-03-21T22:26:37-00:00</lastmod>
+<lastmod>2019-03-22T01:42:18-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -32,8 +32,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/blog/making_the_blog_2/</loc>
+<lastmod>2019-03-23T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/blog/making_the_blog/</loc>
-<lastmod>2019-03-21T00:00:00-04:00</lastmod>
+<lastmod>2019-03-22T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,7 +54,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/category/builds/</loc>
-<lastmod>2019-03-21T00:00:00-04:56</lastmod>
+<lastmod>2019-03-23T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -61,14 +68,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/tag/pelican/</loc>
-<lastmod>2019-03-21T00:00:00-04:56</lastmod>
+<lastmod>2019-03-23T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/blog/tag/python/</loc>
-<lastmod>2019-03-21T00:00:00-04:56</lastmod>
+<lastmod>2019-03-23T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,7 +89,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/author/saurav-sengupta/</loc>
-<lastmod>2019-03-21T00:00:00-04:56</lastmod>
+<lastmod>2019-03-23T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

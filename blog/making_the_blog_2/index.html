@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and plugins." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@svenkreiss" />
+    <meta name="twitter:creator" content="@svenkreiss" />
+    <meta name="twitter:title" content="Making the website using Pelican and GitHub: Part 2" />
+    <meta name="twitter:description" content="Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and plugins." />
+    <meta name="twitter:image:src" content="/images/default_theme_pelican.png" />
+    <meta name="twitter:domain" content="svenkreiss.com" />
+
+    <meta property="og:title" content="Making the website using Pelican and GitHub: Part 2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and plugins." />
+    <meta property="og:image" content="/images/default_theme_pelican.png" />
+    <meta property="og:site_name" content="svenkreiss.com" />
+    <meta property="og:url" content="/blog/making_the_blog_2/" />
+
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Saurav Sengupta Full Atom Feed"/>
+
+        <title>Making the website using Pelican and GitHub: Part 2 - Saurav Sengupta</title>
+
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.css" integrity="sha384-VEnyslhHLHiYPca9KFkBB3CMeslnM9CzwjxsEbZTeA21JBm7tdLwKoZmCt3cZTYD" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.js" integrity="sha384-O4hpKqcplNCe+jLuBVEXC10Rn1QEqAmX98lKAIFBEDxZI0a+6Z2w2n8AEtQbR4CD" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/theme/css/pure.css?v=0.1.0" />
+<link rel="stylesheet" href="/theme/css/pygments.css" />
+
+    <!-- for pelican_dynamic plugin -->
+    <!-- end pelican_dynamic -->
+
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <a href="/blog/author/saurav-sengupta/" title="See posts by Saurav Sengupta">
+                <img class="avatar" alt="Saurav Sengupta" src="https://www.gravatar.com/avatar/7886ef373056b9dbd24606c7162cc471?s=140">
+            </a>
+            <h2 class="article-info">Saurav Sengupta</h2>
+
+
+
+            <p class="article-date">March 23, 2019</p>
+
+            <a class="header-article-home" href="/blog/">&larr;Back to Blog</a>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Making the website using Pelican and GitHub: Part&nbsp;2</h1>
+                </header>
+            </section>
+
+            <p><img src="/images/default_theme_pelican.png" width="1500" title="default blog theme" alt="default blog theme"></p>
+<p>This is the default theme from Pelican, which looks fine and achieves most of the stuff you&nbsp;need. </p>
+<p>I needed a cleaner looking theme though and one that I could customize. Thus, started the hunt for the&nbsp;theme.</p>
+<h3>Hunt for the&nbsp;theme</h3>
+<p>Here are the resources I found after Googling. Maybe you&#8217;ll find&nbsp;better.</p>
+<ul>
+<li><a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a></li>
+<li><a href="http://www.pelicanthemes.com/">http://www.pelicanthemes.com/</a></li>
+</ul>
+<p>However, none of them seemed to look good to me. Also, most of them were updated a while ago, and might break in the&nbsp;future.</p>
+<p>The one which I liked was the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">&#8216;pelican-bootstrap3&#8217;</a> theme.Its regularly updated and <a href="https://github.com/getpelican/pelican-themes/blob/master/pelican-bootstrap3/EXAMPLES.md">widely used</a>. </p>
+<p>But I felt something was missing. So I turned&nbsp;elsewhere.</p>
+<p>I stumbled upon this <a href="https://www.svenkreiss.com/blog/pelican-2018/">blog post</a> by Sven Kreiss. I liked the website and the fact that both of us are kind of in the same domain. He is using a customized theme named &#8216;pure&#8217; available <a href="https://github.com/svenkreiss/pure">here</a>.</p>
+<p>The pelican-themes github repo mentioned above also has a version of the <a href="https://github.com/danclaudiupop/pure/tree/9c58a20c1ed86a26c456ac1f3a736838b6409fc1">pure</a> theme, if you want to check that&nbsp;out.</p>
+<h3>Decided on the theme. What&nbsp;now?</h3>
+<p>Honestly, you can find a lot of themes in the wild online. However, there are some commonalities between all of&nbsp;them.</p>
+<p>What are those you might ask? Here we look at the all important <strong>pelicanconf.py</strong>&nbsp;file.</p>
+<h3>pelicanconf.py</h3>
+<p>This file is generated after the quick start step and contains, as the name suggests, all the different configurations for your&nbsp;website.</p>
+<p>For example the <span class="caps">SOCIAL</span> variable. Here&#8217;s what it can look&nbsp;like:</p>
+<div class="highlight"><pre><span></span><span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;twitter&#39;</span><span class="p">,</span> <span class="s1">&#39;https://twitter.com/sauravsen111&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;linkedin&#39;</span><span class="p">,</span> <span class="s1">&#39;https://www.linkedin.com/in/saurav-sengupta/&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Which results&nbsp;in:</p>
+<p><img src="/images/default_theme_pelican-social.png" width="250" title="default blog theme" alt="default blog theme"></p>
+<p>This ease of use is so awesome that it almost makes me believe in God. Its great living in the 21st&nbsp;century.</p>
+<p>Pelican does not have emoji support though.. so I am back to&nbsp;being&#8230;agnostic..?</p>
+<p>That went off-track soon. Back to website building. It gets tricky from here on&nbsp;out.</p>
+<h3>Getting the themes you&nbsp;want</h3>
+<p>Somewhere outside your checked out repository folder create a <strong>pelican-themes</strong> folder and checkout the theme you want. For&nbsp;example,</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/svenkreiss/pure.git
+</pre></div>
+
+
+<p>or checkout the whole <a href="https://github.com/getpelican/pelican-themes">pelican-themes</a> repo, if you want to be that way about&nbsp;it.</p>
+<h3>Installing and using&nbsp;themes</h3>
+<p>Just&nbsp;do</p>
+<div class="highlight"><pre><span></span>pelican-themes -i /path/to/themes/pure
+</pre></div>
+
+
+<p>Check if the theme is&nbsp;installed</p>
+<div class="highlight"><pre><span></span>pelican-themes -v -l
+</pre></div>
+
+
+<p>Go to the <strong>pelicanconf.py</strong> file and&nbsp;do</p>
+<div class="highlight"><pre><span></span><span class="n">THEME</span><span class="o">=</span><span class="s1">&#39;pure&#39;</span>
+</pre></div>
+
+
+<p>Generate the pages&nbsp;using</p>
+<div class="highlight"><pre><span></span>pelican content -D -s pelicanconf.py -o output
+</pre></div>
+
+
+<p>Barring any errors, your theme should start working the next time you start your server&nbsp;using</p>
+<div class="highlight"><pre><span></span>make devserver
+</pre></div>
+
+
+<h3>Installing and using&nbsp;plugins</h3>
+<p>Go ahead and checkout the whole <a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a> GitHub repo in the folder of your&nbsp;choice.</p>
+<p>We will talk about the all purpose <a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid_tags</a> plugin&nbsp;here.</p>
+<p>It has pretty good documentation on how to use it but still I&#8217;ll go over how to use it&nbsp;here.</p>
+<p>Add the following to your configuration&nbsp;file-</p>
+<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="s1">&#39;/path/to/pelican-plugins&#39;</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;liquid_tags.img&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.video&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;liquid_tags.youtube&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.vimeo&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;liquid_tags.include_code&#39;</span><span class="p">,</span> <span class="s1">&#39;liquid_tags.notebook&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>To insert the image in your markdown use this inside your&nbsp;markdown-</p>
+<div class="highlight"><pre><span></span>{% img /images/blog_snapshot.png 1500 blogs-snapshot %}
+</pre></div>
+
+
+<p>Hold&nbsp;up. </p>
+<p>Where do you store your images and&nbsp;files?</p>
+<h3>Where to store files and&nbsp;images</h3>
+<p>Create folders named <strong>images</strong> and <strong>files</strong> inside your content&nbsp;directory.</p>
+<p>Set the following parameter in your configuration&nbsp;file-</p>
+<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="s1">&#39;files&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Put your images inside the <strong>images</strong>&nbsp;folder.</p>
+<p>Done.</p>
+<p>Phew.</p>
+<p>This part 2 should give you enough of a head-start to make a working, good looking&nbsp;website.</p>
+<p>Explore themes and other people who have used those themes to find out and learn more about the ones you want to&nbsp;use.</p>
+<p>Stay golden people.&nbsp;Peace.</p>
+
+            <p class="post-footer">
+                // filed
+under                <a class="post-category" href="/blog/tag/pelican/">pelican</a>
+                <a class="post-category" href="/blog/tag/python/">python</a>
+                in <a class="post-category"
+                    href="/blog/category/builds/">builds</a>&nbsp;&nbsp;&nbsp;
+
+                <span style="display:inline-block;">
+                    // share on <a
+                        href="https://twitter.com/share?text=%22Making%20the%20website%20using%20Pelican%20and%20GitHub%3A%20Part%C2%A02%3A%20Part%202%20of%20steps%20for%20making%20the%20website%20using%20Pelican%20and%20GitHub.%20This%20post%20shows%20how%20to%20use%20Pelican%20themes%20and%C2%A0plugins.%22&amp;hashtags=pelican%2Cpython"
+                        target="_blank">
+                        <i class="fa fa-twitter fa-lg"></i> Twitter
+                    </a>
+                </span>
+            </p>
+            <div class="hr"></div>
+
+            <h2>Related Posts</h2>
+            <ul class="related-posts">
+                <li>
+                    <a class="title" href="/blog/making_the_blog/">Making the website using Pelican and GitHub: Part&nbsp;1</a>
+                    <span class="date">from March 22, 2019</span>
+                    <span class="summary">Part 1 of steps to create a website using Pelican and GitHub. It covers making a basic Pelican blog.</span>
+                </li>
+            </ul>
+
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Saurav Sengupta  2019 &ndash; 2019. Published with <a href="https://github.com/getpelican/pelican">Pelican</a>.<br /></p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        renderMathInElement(document.body);
+    </script>
+
+    <!-- for pelican_dynamic plugin -->
+
+
+
+</body>
+</html>
