@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Saurav Sengupta</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-03-21T00:00:00-04:00</updated><entry><title>Making the website using Pelican and GitHub: Part 1</title><link href="/blog/making_the_blog/" rel="alternate"></link><published>2019-03-21T00:00:00-04:00</published><updated>2019-03-21T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-21:/blog/making_the_blog/</id><summary type="html">&lt;p&gt;Steps for making the website using Pelican and&amp;nbsp;Github.&lt;/p&gt;</summary><content type="html">&lt;!-- ### Making the blog --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Saurav Sengupta</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2019-03-21T00:00:00-04:00</updated><entry><title>Making the website using Pelican and GitHub: Part 1</title><link href="/blog/making_the_blog/" rel="alternate"></link><published>2019-03-21T00:00:00-04:00</published><updated>2019-03-21T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-21:/blog/making_the_blog/</id><summary type="html">&lt;p&gt;Part 1 of steps to create a website using Pelican and&amp;nbsp;Github.&lt;/p&gt;</summary><content type="html">&lt;!-- ### Making the blog --&gt;
 
 &lt;!-- ### Reason
 
@@ -55,6 +55,7 @@ That's it. --&gt;
 &lt;p&gt;Here is a screenshot of what options to&amp;nbsp;choose.&lt;/p&gt;
 &lt;p&gt;&lt;img src="/images/quickstart_snapshot.jpg" width="1500" title="Snapshot for quickstart" alt="Snapshot for quickstart"&gt;&lt;/p&gt;
 &lt;p&gt;Remember all of this is happening inside your &lt;span class="caps"&gt;USERNAME&lt;/span&gt;.github.io folder that you checked out&amp;nbsp;before.&lt;/p&gt;
+&lt;p&gt;Also, yes, I am doing all of this using &lt;a href="https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#0"&gt;Ubuntu for Windows&lt;/a&gt;! Nifty little thing they did&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;Your website is almost&amp;nbsp;ready!&lt;/p&gt;
 &lt;h3&gt;Start building&amp;nbsp;content&lt;/h3&gt;
 &lt;p&gt;Once the quickstart process is complete, there will be a folder called &lt;strong&gt;content&lt;/strong&gt; created for you. Create a folder called &lt;strong&gt;posts&lt;/strong&gt; inside this&amp;nbsp;folder.&lt;/p&gt;
