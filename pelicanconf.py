@@ -64,10 +64,11 @@ PLUGINS = [
     'liquid_tags.include_code',
     # 'liquid_tags.notebook',
     'representative_image',
-    'image_process',
+    # 'image_process',
     'pelican-cite',
     'related_posts',
     'pelican_dynamic',
+    # 'minchin.pelican.plugins.image_process',
     # 'pelican_advance_embed_tweet',
 ]
 
