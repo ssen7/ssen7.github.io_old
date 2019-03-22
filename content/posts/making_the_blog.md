@@ -125,7 +125,7 @@ My .gitignore looks like this.
 /__pycache__/
 ```
 
-I'll address the 'node_modules' in a later blog.
+I'll address the 'node_modules' in a later post.
 
 Use the following commands one after the another to commit all of the generated stuff to GitHub. 
 ```
