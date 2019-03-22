@@ -89,7 +89,7 @@ My .gitignore looks like&amp;nbsp;this.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;I&amp;#8217;ll address the &amp;#8216;node_modules&amp;#8217; in a later&amp;nbsp;blog.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll address the &amp;#8216;node_modules&amp;#8217; in a later&amp;nbsp;post.&lt;/p&gt;
 &lt;p&gt;Use the following commands one after the another to commit all of the generated stuff to&amp;nbsp;GitHub. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add -A
 git commit -m &amp;quot;my first blog&amp;quot;
