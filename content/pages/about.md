@@ -13,7 +13,7 @@ I come from a web development background where I helped a renowned bank in Asia 
 
 I am motivated by the idea of building accessible pieces of technology that assist us in our daily lives, by helping us invest smarter, learn better and other myriad of uses. I hope to use the cutting edge of technology to build such systems.
 
-In my free time, I explore ways technology is affecting us as humans. Also, I am into science fiction!
+In my free time, I explore ways technology is affecting us as humans. Also, I am into science fiction and fantasy! The [Nexus Trilogy](http://rameznaam.com/Nexus/) by Ramez Naam remains an all time favorite. And almost all the books by [Brandon Sanderson](https://www.goodreads.com/book/show/7235533-the-way-of-kings).
 
 You can find my updated [CV](/files/cv.pdf) here (pdf).
 

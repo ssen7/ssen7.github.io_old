@@ -4,7 +4,7 @@ Category: builds
 Tags: pelican, python
 Slug: making_the_blog
 Author: Saurav Sengupta
-Summary: Steps for making the website using Pelican and Github.
+Summary: Part 1 of steps to create a website using Pelican and Github.
 Status: published
 
 <!-- ### Making the blog -->
@@ -80,6 +80,8 @@ Here is a screenshot of what options to choose.
 {% img /images/quickstart_snapshot.jpg 1500 Snapshot for quickstart %}
 
 Remember all of this is happening inside your USERNAME.github.io folder that you checked out before.
+
+Also, yes, I am doing all of this using [Ubuntu for Windows](https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#0)! Nifty little thing they did there.
 
 Your website is almost ready!
 
