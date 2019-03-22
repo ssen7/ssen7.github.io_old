@@ -1,5 +1,5 @@
 Title: Making the website using Pelican and GitHub: Part 1
-Date: 2019-03-22
+Date: 2019-03-21
 Category: builds
 Tags: pelican, python
 Slug: making_the_blog

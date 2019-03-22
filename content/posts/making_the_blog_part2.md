@@ -1,11 +1,11 @@
 Title: Making the website using Pelican and GitHub: Part 2
-Date: 2019-03-23
+Date: 2019-03-22
 Category: builds
 Tags: pelican, python
 Slug: making_the_blog_2
 Author: Saurav Sengupta
 Summary: Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and plugins.
-Status: published
+Status: draft
 
 {% img /images/default_theme_pelican.png 1500 default blog theme %}
 

@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Saurav Sengupta'
 SITENAME = u'Saurav Sengupta'
-SITEURL = 'https://ssen7.github.io'
+SITEURL = ''
 
 TIMEZONE = 'America/New_York'
 
@@ -44,7 +44,7 @@ PATH = 'content'
 PAGE_EXCLUDES = ['files', 'extras']
 ARTICLE_EXCLUDES = ['files', 'pages', 'extras']
 
-STATIC_PATHS = ['images', 'files', 'extras']
+STATIC_PATHS = ['images', 'files', 'extras', 'posts']
 
 EXTRA_PATH_METADATA = {
     'extras/robots.txt': {'path': 'robots.txt'},
@@ -68,6 +68,7 @@ PLUGINS = [
     'pelican-cite',
     'related_posts',
     'pelican_dynamic',
+    # 'better_figures_and_images',
     # 'minchin.pelican.plugins.image_process',
     # 'pelican_advance_embed_tweet',
 ]
