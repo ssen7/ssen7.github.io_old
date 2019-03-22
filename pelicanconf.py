@@ -125,7 +125,7 @@ AUTHOR_EMAIL = 'sauravsengupta7@gmail.com'
 AUTHOR_IMAGE = '/images/download.jpg'
 TAGLINE = 'Masters of Data Science at DSI, UVA.'
 META_DESCRIPTION = 'my personal website'
-# DISQUS_SITENAME = 'ssen7'
+DISQUS_SITENAME = 'ssen7'
 COPYRIGHT_YEARS = '2019 &ndash; 2019'
 COPYRIGHT_FOOTER = (
     '<p>'
