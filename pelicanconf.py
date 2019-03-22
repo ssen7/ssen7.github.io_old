@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Saurav Sengupta'
 SITENAME = u'Saurav Sengupta'
-SITEURL = ''
+SITEURL = 'https://ssen7.github.io'
 
 TIMEZONE = 'America/New_York'
 
