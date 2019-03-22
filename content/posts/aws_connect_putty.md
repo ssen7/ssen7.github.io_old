@@ -1,11 +1,11 @@
-Title:Connect to AWS EC2 instance using Putty and run Jupyter notebook
-Date: 2019-03-23
+Title:Run Jupyter notebook on AWS EC2 using Putty
+Date: 2019-03-22
 Category: AWS
-Tags: aws, projects
+Tags: aws, projects, ec2
 Slug: aws_putty
 Author: Saurav Sengupta
-Summary: Awesomeness
-Status: draft
+Summary: Awesomeness.
+Status: published
 
 This post originates from my frustrations while installing and working with Open Slide in a Windows machine. For some reason I could not get it to work.
 

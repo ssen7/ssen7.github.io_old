@@ -5,7 +5,7 @@ Tags: pelican, python
 Slug: making_the_blog_2
 Author: Saurav Sengupta
 Summary: Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and plugins.
-Status: draft
+Status: published
 
 {% img /images/default_theme_pelican.png 1500 default blog theme %}
 
