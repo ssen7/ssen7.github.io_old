@@ -1,5 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Saurav Sengupta - Saurav Sengupta</title><link href="/" rel="alternate"></link><link href="/feeds/saurav-sengupta.atom.xml" rel="self"></link><id>/</id><updated>2019-03-21T00:00:00-04:00</updated><entry><title>Making the website using Pelican and GitHub: Part 1</title><link href="/blog/making_the_blog/" rel="alternate"></link><published>2019-03-21T00:00:00-04:00</published><updated>2019-03-21T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-21:/blog/making_the_blog/</id><summary type="html">&lt;p&gt;Part 1 of steps to create a website using Pelican and GitHub. It covers making a basic Pelican&amp;nbsp;blog.&lt;/p&gt;</summary><content type="html">&lt;!-- ### Making the blog --&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Saurav Sengupta - Saurav Sengupta</title><link href="/" rel="alternate"></link><link href="/feeds/saurav-sengupta.atom.xml" rel="self"></link><id>/</id><updated>2019-03-22T00:00:00-04:00</updated><entry><title>Run Jupyter notebook on AWS EC2 using Putty</title><link href="/blog/aws_putty/" rel="alternate"></link><published>2019-03-22T00:00:00-04:00</published><updated>2019-03-22T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-22:/blog/aws_putty/</id><summary type="html">&lt;p&gt;Awesomeness.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post originates from my frustrations while installing and working with Open Slide in a Windows machine. For some reason I could not get it to&amp;nbsp;work.&lt;/p&gt;
+&lt;p&gt;Since most packages for openslide-python, the package I required, are written for Linux, I needed a Linux machine. That and my hesitation to dual boot my laptop with Linux, made me look towards Amazon Web&amp;nbsp;Services.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;AWS&lt;/span&gt; provides free tier instances for &lt;span class="caps"&gt;EC2&lt;/span&gt; instances for free for a year after initial sign up. This was a good opportunity to use this free&amp;nbsp;service.&lt;/p&gt;
+&lt;p&gt;What I figured out was a very convoluted process to run a Jupyter notebook on a free linux&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;But hey, we are learning&amp;nbsp;right?&lt;/p&gt;
+&lt;p&gt;With that disclaimer out of the way, lets jump&amp;nbsp;in.&lt;/p&gt;
+&lt;h3&gt;Create an &lt;span class="caps"&gt;AWS&lt;/span&gt; &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance&lt;/h3&gt;
+&lt;p&gt;Creating an &lt;span class="caps"&gt;EC2&lt;/span&gt; instance is as straightforward as logging into the &lt;span class="caps"&gt;AWS&lt;/span&gt; Console and choosing any of the free tier instances available. I chose to go for the most basic instance, since that would suffice for my&amp;nbsp;needs.&lt;/p&gt;
+&lt;p&gt;The tricky part however is connecting to &lt;span class="caps"&gt;AWS&lt;/span&gt; and running a Jupyter notebook through your Windows&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;Here comes Putty (horrible name) to the&amp;nbsp;rescue.&lt;/p&gt;
+&lt;h3&gt;Install&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.putty.org/"&gt;Download putty&lt;/a&gt; and install it on your windows machine. Pretty standard&amp;nbsp;stuff.&lt;/p&gt;
+&lt;h3&gt;Connecting to &lt;span class="caps"&gt;EC2&lt;/span&gt; via&amp;nbsp;Putty.&lt;/h3&gt;
+&lt;p&gt;When you login to &lt;span class="caps"&gt;AWS&lt;/span&gt; Console and navigate to the &lt;span class="caps"&gt;EC2&lt;/span&gt; service, you will see something like&amp;nbsp;this&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/ec2-resources.png" width="500" title="blogs-snapshot" alt="blogs-snapshot"&gt;&lt;/p&gt;
+&lt;p&gt;If you already have a key pair, then you should have saved it somewhere on your local system, since you cannot download it&amp;nbsp;again. &lt;/p&gt;
+&lt;p&gt;If you don&amp;#8217;t, you can always create a new pair. Download the .pem file and save it to a folder in your local&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;We are doing all this since we need a public-private key pair to actually make a connection to &lt;span class="caps"&gt;EC2&lt;/span&gt; instance via &lt;span class="caps"&gt;SSH&lt;/span&gt;.&lt;/p&gt;
+&lt;h4&gt;Convert .pem to .ppk file&amp;nbsp;format&lt;/h4&gt;
+&lt;p&gt;Since Putty cannot use .pem file format, we need to convert it to a useable&amp;nbsp;format.&lt;/p&gt;
+&lt;p&gt;Here is a good stack overflow answer to help you&amp;nbsp;through.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format"&gt;https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;At the end of this you should have a public-private key pair saved safely in your local&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;Now we can start configuring Putty to connect to our &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance.&lt;/p&gt;
+&lt;h3&gt;Configuring&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;&lt;img src="/images/putty_clean.png" width="500" title="putty clean" alt="putty clean"&gt;&lt;/p&gt;
+&lt;p&gt;This is what Putty looks&amp;nbsp;like.&lt;/p&gt;
+&lt;p&gt;Lets&amp;nbsp;start.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Since I used &lt;strong&gt;&amp;#8220;Amazon Linux 2 &lt;span class="caps"&gt;AMI&lt;/span&gt; (&lt;span class="caps"&gt;HVM&lt;/span&gt;)&amp;#8221;&lt;/strong&gt;, the &lt;strong&gt;host name&lt;/strong&gt; field in the interface is ec2-user@[&lt;span class="caps"&gt;IPV4&lt;/span&gt; address]. &lt;span class="caps"&gt;IPV4&lt;/span&gt; address is the one I highlighted in the  picture below. Just select and&amp;nbsp;copy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/aws_ipv4.png" width="1000" title="aws ipv4" alt="aws ipv4"&gt;&lt;/p&gt;
+&lt;p&gt;If you had used a Ubuntu instance, the host name would be ubuntu@[&lt;span class="caps"&gt;IPV4&lt;/span&gt;&amp;nbsp;address].&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to Connection -&amp;gt; &lt;span class="caps"&gt;SSH&lt;/span&gt; -&amp;gt; Auth and paste the path of your private key (.ppk&amp;nbsp;file).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/putty_auth.png" width="500" title="putty auth" alt="putty auth"&gt;&lt;/p&gt;
+&lt;p&gt;This completes your basic&amp;nbsp;setup.&lt;/p&gt;
+&lt;h3&gt;Tunneling using&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;This is the magic sauce that enable us to connect to Jupyter notebooks running on your &lt;span class="caps"&gt;AWS&lt;/span&gt; &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and it is deceptively&amp;nbsp;easy.&lt;/p&gt;
+&lt;p&gt;In your Putty interface, go to Connection -&amp;gt; &lt;span class="caps"&gt;SSH&lt;/span&gt; -&amp;gt;&amp;nbsp;Tunnels.&lt;/p&gt;
+&lt;p&gt;Normally Jupyter notebooks start on port 8888. Therefore we configure port forwarding&amp;nbsp;accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/putty_port.png" width="500" title="putty port" alt="putty port"&gt;&lt;/p&gt;
+&lt;p&gt;After filling the above fields, click on &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One last step is saving your Putty session, so that we do not have to go through this&amp;nbsp;again.&lt;/p&gt;
+&lt;p&gt;Go back to &lt;strong&gt;Session&lt;/strong&gt; in the Putty &lt;span class="caps"&gt;GUI&lt;/span&gt;, and in the &lt;strong&gt;Saved Sessions&lt;/strong&gt; field, you can name your session as aws_ec2 and click on &lt;strong&gt;Save&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now if you click &lt;strong&gt;Open&lt;/strong&gt;, you should be able to connect to the bash terminal of your running &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance.&lt;/p&gt;
+&lt;p&gt;It should look something like&amp;nbsp;this.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/ec2_connect.png" width="500" title="ec2 port" alt="ec2 port"&gt;&lt;/p&gt;
+&lt;h2&gt;Final&amp;nbsp;Steps&lt;/h2&gt;
+&lt;p&gt;Since you have access to the terminal of your &lt;span class="caps"&gt;EC2&lt;/span&gt; instance, go ahead download the Anaconda Linux installer&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next install Anaconda&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bash Anaconda3-2018.12-Linux-x86_64.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will install Jupyter and all other data science&amp;nbsp;packages.&lt;/p&gt;
+&lt;p&gt;Go ahead and launch your Jupyter notebook using&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter notebook --no-browser
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It will create &lt;strong&gt;localhost:8888&lt;/strong&gt; url in the shell with the token id&amp;nbsp;attached. &lt;/p&gt;
+&lt;p&gt;Paste that on the browser in your computer and see magic&amp;nbsp;happen.&lt;/p&gt;</content><category term="aws"></category><category term="projects"></category><category term="ec2"></category></entry><entry><title>Making the website using Pelican and GitHub: Part 2</title><link href="/blog/making_the_blog_2/" rel="alternate"></link><published>2019-03-22T00:00:00-04:00</published><updated>2019-03-22T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-22:/blog/making_the_blog_2/</id><summary type="html">&lt;p&gt;Part 2 of steps for making the website using Pelican and GitHub. This post shows how to use Pelican themes and&amp;nbsp;plugins.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="/images/default_theme_pelican.png" width="1500" title="default blog theme" alt="default blog theme"&gt;&lt;/p&gt;
+&lt;p&gt;This is the default theme from Pelican, which looks fine and achieves most of the stuff you&amp;nbsp;need. &lt;/p&gt;
+&lt;p&gt;I needed a cleaner looking theme though and one that I could customize. Thus, started the hunt for the&amp;nbsp;theme.&lt;/p&gt;
+&lt;h3&gt;Hunt for the&amp;nbsp;theme&lt;/h3&gt;
+&lt;p&gt;Here are the resources I found after Googling. Maybe you&amp;#8217;ll find&amp;nbsp;better.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican-themes"&gt;https://github.com/getpelican/pelican-themes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pelicanthemes.com/"&gt;http://www.pelicanthemes.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;However, none of them seemed to look good to me. Also, most of them were updated a while ago, and might break in the&amp;nbsp;future.&lt;/p&gt;
+&lt;p&gt;The one which I liked was the &lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"&gt;&amp;#8216;pelican-bootstrap3&amp;#8217;&lt;/a&gt; theme.Its regularly updated and &lt;a href="https://github.com/getpelican/pelican-themes/blob/master/pelican-bootstrap3/EXAMPLES.md"&gt;widely used&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;But I felt something was missing. So I turned&amp;nbsp;elsewhere.&lt;/p&gt;
+&lt;p&gt;I stumbled upon this &lt;a href="https://www.svenkreiss.com/blog/pelican-2018/"&gt;blog post&lt;/a&gt; by Sven Kreiss. I liked the website and the fact that both of us are kind of in the same domain. He is using a customized theme named &amp;#8216;pure&amp;#8217; available &lt;a href="https://github.com/svenkreiss/pure"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The pelican-themes github repo mentioned above also has a version of the &lt;a href="https://github.com/danclaudiupop/pure/tree/9c58a20c1ed86a26c456ac1f3a736838b6409fc1"&gt;pure&lt;/a&gt; theme, if you want to check that&amp;nbsp;out.&lt;/p&gt;
+&lt;h3&gt;Decided on the theme. What&amp;nbsp;now?&lt;/h3&gt;
+&lt;p&gt;Honestly, you can find a lot of themes in the wild online. However, there are some commonalities between all of&amp;nbsp;them.&lt;/p&gt;
+&lt;p&gt;What are those you might ask? Here we look at the all important &lt;strong&gt;pelicanconf.py&lt;/strong&gt;&amp;nbsp;file.&lt;/p&gt;
+&lt;h3&gt;pelicanconf.py&lt;/h3&gt;
+&lt;p&gt;This file is generated after the quick start step and contains, as the name suggests, all the different configurations for your&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;For example the &lt;span class="caps"&gt;SOCIAL&lt;/span&gt; variable. Here&amp;#8217;s what it can look&amp;nbsp;like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;twitter&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;https://twitter.com/sauravsen111&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;linkedin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;https://www.linkedin.com/in/saurav-sengupta/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which results&amp;nbsp;in:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/default_theme_pelican-social.png" width="250" title="default blog theme" alt="default blog theme"&gt;&lt;/p&gt;
+&lt;p&gt;This ease of use is so awesome that it almost makes me believe in God. Its great living in the 21st&amp;nbsp;century.&lt;/p&gt;
+&lt;p&gt;Pelican does not have emoji support though.. so I am back to&amp;nbsp;being&amp;#8230;agnostic..?&lt;/p&gt;
+&lt;p&gt;That went off-track soon. Back to website building. It gets tricky from here on&amp;nbsp;out.&lt;/p&gt;
+&lt;h3&gt;Getting the themes you&amp;nbsp;want&lt;/h3&gt;
+&lt;p&gt;Somewhere outside your checked out repository folder create a &lt;strong&gt;pelican-themes&lt;/strong&gt; folder and checkout the theme you want. For&amp;nbsp;example,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/svenkreiss/pure.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or checkout the whole &lt;a href="https://github.com/getpelican/pelican-themes"&gt;pelican-themes&lt;/a&gt; repo, if you want to be that way about&amp;nbsp;it.&lt;/p&gt;
+&lt;h3&gt;Installing and using&amp;nbsp;themes&lt;/h3&gt;
+&lt;p&gt;Just&amp;nbsp;do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican-themes -i /path/to/themes/pure
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check if the theme is&amp;nbsp;installed&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican-themes -v -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Go to the &lt;strong&gt;pelicanconf.py&lt;/strong&gt; file and&amp;nbsp;do&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pure&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Generate the pages&amp;nbsp;using&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content -D -s pelicanconf.py -o output
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Barring any errors, your theme should start working the next time you start your server&amp;nbsp;using&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Installing and using&amp;nbsp;plugins&lt;/h3&gt;
+&lt;p&gt;Go ahead and checkout the whole &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;pelican-plugins&lt;/a&gt; GitHub repo in the folder of your&amp;nbsp;choice.&lt;/p&gt;
+&lt;p&gt;We will talk about the all purpose &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags"&gt;liquid_tags&lt;/a&gt; plugin&amp;nbsp;here.&lt;/p&gt;
+&lt;p&gt;It has pretty good documentation on how to use it but still I&amp;#8217;ll go over how to use it&amp;nbsp;here.&lt;/p&gt;
+&lt;p&gt;Add the following to your configuration&amp;nbsp;file-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/path/to/pelican-plugins&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;liquid_tags.img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.video&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;&amp;#39;liquid_tags.youtube&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.vimeo&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s1"&gt;&amp;#39;liquid_tags.include_code&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;liquid_tags.notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To insert the image in your markdown use this inside your&amp;nbsp;markdown-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% img /images/blog_snapshot.png 1500 blogs-snapshot %}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hold&amp;nbsp;up. &lt;/p&gt;
+&lt;p&gt;Where do you store your images and&amp;nbsp;files?&lt;/p&gt;
+&lt;h3&gt;Where to store files and&amp;nbsp;images&lt;/h3&gt;
+&lt;p&gt;Create folders named &lt;strong&gt;images&lt;/strong&gt; and &lt;strong&gt;files&lt;/strong&gt; inside your content&amp;nbsp;directory.&lt;/p&gt;
+&lt;p&gt;Set the following parameter in your configuration&amp;nbsp;file-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;files&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Put your images inside the &lt;strong&gt;images&lt;/strong&gt;&amp;nbsp;folder.&lt;/p&gt;
+&lt;p&gt;Done.&lt;/p&gt;
+&lt;p&gt;Phew.&lt;/p&gt;
+&lt;p&gt;This part 2 should give you enough of a head-start to make a working, good looking&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;Explore themes and other people who have used those themes to find out and learn more about the ones you want to&amp;nbsp;use.&lt;/p&gt;
+&lt;p&gt;Stay golden people.&amp;nbsp;Peace.&lt;/p&gt;</content><category term="pelican"></category><category term="python"></category></entry><entry><title>Making the website using Pelican and GitHub: Part 1</title><link href="/blog/making_the_blog/" rel="alternate"></link><published>2019-03-21T00:00:00-04:00</published><updated>2019-03-21T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-21:/blog/making_the_blog/</id><summary type="html">&lt;p&gt;Part 1 of steps to create a website using Pelican and GitHub. It covers making a basic Pelican&amp;nbsp;blog.&lt;/p&gt;</summary><content type="html">&lt;!-- ### Making the blog --&gt;
 
 &lt;!-- ### Reason
 

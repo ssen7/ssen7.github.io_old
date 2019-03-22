@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Saurav Sengupta - AWS</title><link href="/" rel="alternate"></link><link href="/feeds/aws.atom.xml" rel="self"></link><id>/</id><updated>2019-03-22T00:00:00-04:00</updated><entry><title>Run Jupyter notebook on AWS EC2 using Putty</title><link href="/blog/aws_putty/" rel="alternate"></link><published>2019-03-22T00:00:00-04:00</published><updated>2019-03-22T00:00:00-04:00</updated><author><name>Saurav Sengupta</name></author><id>tag:None,2019-03-22:/blog/aws_putty/</id><summary type="html">&lt;p&gt;Awesomeness.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This post originates from my frustrations while installing and working with Open Slide in a Windows machine. For some reason I could not get it to&amp;nbsp;work.&lt;/p&gt;
+&lt;p&gt;Since most packages for openslide-python, the package I required, are written for Linux, I needed a Linux machine. That and my hesitation to dual boot my laptop with Linux, made me look towards Amazon Web&amp;nbsp;Services.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;AWS&lt;/span&gt; provides free tier instances for &lt;span class="caps"&gt;EC2&lt;/span&gt; instances for free for a year after initial sign up. This was a good opportunity to use this free&amp;nbsp;service.&lt;/p&gt;
+&lt;p&gt;What I figured out was a very convoluted process to run a Jupyter notebook on a free linux&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;But hey, we are learning&amp;nbsp;right?&lt;/p&gt;
+&lt;p&gt;With that disclaimer out of the way, lets jump&amp;nbsp;in.&lt;/p&gt;
+&lt;h3&gt;Create an &lt;span class="caps"&gt;AWS&lt;/span&gt; &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance&lt;/h3&gt;
+&lt;p&gt;Creating an &lt;span class="caps"&gt;EC2&lt;/span&gt; instance is as straightforward as logging into the &lt;span class="caps"&gt;AWS&lt;/span&gt; Console and choosing any of the free tier instances available. I chose to go for the most basic instance, since that would suffice for my&amp;nbsp;needs.&lt;/p&gt;
+&lt;p&gt;The tricky part however is connecting to &lt;span class="caps"&gt;AWS&lt;/span&gt; and running a Jupyter notebook through your Windows&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;Here comes Putty (horrible name) to the&amp;nbsp;rescue.&lt;/p&gt;
+&lt;h3&gt;Install&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.putty.org/"&gt;Download putty&lt;/a&gt; and install it on your windows machine. Pretty standard&amp;nbsp;stuff.&lt;/p&gt;
+&lt;h3&gt;Connecting to &lt;span class="caps"&gt;EC2&lt;/span&gt; via&amp;nbsp;Putty.&lt;/h3&gt;
+&lt;p&gt;When you login to &lt;span class="caps"&gt;AWS&lt;/span&gt; Console and navigate to the &lt;span class="caps"&gt;EC2&lt;/span&gt; service, you will see something like&amp;nbsp;this&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/ec2-resources.png" width="500" title="blogs-snapshot" alt="blogs-snapshot"&gt;&lt;/p&gt;
+&lt;p&gt;If you already have a key pair, then you should have saved it somewhere on your local system, since you cannot download it&amp;nbsp;again. &lt;/p&gt;
+&lt;p&gt;If you don&amp;#8217;t, you can always create a new pair. Download the .pem file and save it to a folder in your local&amp;nbsp;machine.&lt;/p&gt;
+&lt;p&gt;We are doing all this since we need a public-private key pair to actually make a connection to &lt;span class="caps"&gt;EC2&lt;/span&gt; instance via &lt;span class="caps"&gt;SSH&lt;/span&gt;.&lt;/p&gt;
+&lt;h4&gt;Convert .pem to .ppk file&amp;nbsp;format&lt;/h4&gt;
+&lt;p&gt;Since Putty cannot use .pem file format, we need to convert it to a useable&amp;nbsp;format.&lt;/p&gt;
+&lt;p&gt;Here is a good stack overflow answer to help you&amp;nbsp;through.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format"&gt;https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;At the end of this you should have a public-private key pair saved safely in your local&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;Now we can start configuring Putty to connect to our &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance.&lt;/p&gt;
+&lt;h3&gt;Configuring&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;&lt;img src="/images/putty_clean.png" width="500" title="putty clean" alt="putty clean"&gt;&lt;/p&gt;
+&lt;p&gt;This is what Putty looks&amp;nbsp;like.&lt;/p&gt;
+&lt;p&gt;Lets&amp;nbsp;start.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Since I used &lt;strong&gt;&amp;#8220;Amazon Linux 2 &lt;span class="caps"&gt;AMI&lt;/span&gt; (&lt;span class="caps"&gt;HVM&lt;/span&gt;)&amp;#8221;&lt;/strong&gt;, the &lt;strong&gt;host name&lt;/strong&gt; field in the interface is ec2-user@[&lt;span class="caps"&gt;IPV4&lt;/span&gt; address]. &lt;span class="caps"&gt;IPV4&lt;/span&gt; address is the one I highlighted in the  picture below. Just select and&amp;nbsp;copy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/aws_ipv4.png" width="1000" title="aws ipv4" alt="aws ipv4"&gt;&lt;/p&gt;
+&lt;p&gt;If you had used a Ubuntu instance, the host name would be ubuntu@[&lt;span class="caps"&gt;IPV4&lt;/span&gt;&amp;nbsp;address].&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to Connection -&amp;gt; &lt;span class="caps"&gt;SSH&lt;/span&gt; -&amp;gt; Auth and paste the path of your private key (.ppk&amp;nbsp;file).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/putty_auth.png" width="500" title="putty auth" alt="putty auth"&gt;&lt;/p&gt;
+&lt;p&gt;This completes your basic&amp;nbsp;setup.&lt;/p&gt;
+&lt;h3&gt;Tunneling using&amp;nbsp;Putty&lt;/h3&gt;
+&lt;p&gt;This is the magic sauce that enable us to connect to Jupyter notebooks running on your &lt;span class="caps"&gt;AWS&lt;/span&gt; &lt;span class="caps"&gt;EC2&lt;/span&gt; instance and it is deceptively&amp;nbsp;easy.&lt;/p&gt;
+&lt;p&gt;In your Putty interface, go to Connection -&amp;gt; &lt;span class="caps"&gt;SSH&lt;/span&gt; -&amp;gt;&amp;nbsp;Tunnels.&lt;/p&gt;
+&lt;p&gt;Normally Jupyter notebooks start on port 8888. Therefore we configure port forwarding&amp;nbsp;accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/putty_port.png" width="500" title="putty port" alt="putty port"&gt;&lt;/p&gt;
+&lt;p&gt;After filling the above fields, click on &lt;strong&gt;Add&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;One last step is saving your Putty session, so that we do not have to go through this&amp;nbsp;again.&lt;/p&gt;
+&lt;p&gt;Go back to &lt;strong&gt;Session&lt;/strong&gt; in the Putty &lt;span class="caps"&gt;GUI&lt;/span&gt;, and in the &lt;strong&gt;Saved Sessions&lt;/strong&gt; field, you can name your session as aws_ec2 and click on &lt;strong&gt;Save&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now if you click &lt;strong&gt;Open&lt;/strong&gt;, you should be able to connect to the bash terminal of your running &lt;span class="caps"&gt;EC2&lt;/span&gt;&amp;nbsp;instance.&lt;/p&gt;
+&lt;p&gt;It should look something like&amp;nbsp;this.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/ec2_connect.png" width="500" title="ec2 port" alt="ec2 port"&gt;&lt;/p&gt;
+&lt;h2&gt;Final&amp;nbsp;Steps&lt;/h2&gt;
+&lt;p&gt;Since you have access to the terminal of your &lt;span class="caps"&gt;EC2&lt;/span&gt; instance, go ahead download the Anaconda Linux installer&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next install Anaconda&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bash Anaconda3-2018.12-Linux-x86_64.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will install Jupyter and all other data science&amp;nbsp;packages.&lt;/p&gt;
+&lt;p&gt;Go ahead and launch your Jupyter notebook using&amp;nbsp;-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter notebook --no-browser
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It will create &lt;strong&gt;localhost:8888&lt;/strong&gt; url in the shell with the token id&amp;nbsp;attached. &lt;/p&gt;
+&lt;p&gt;Paste that on the browser in your computer and see magic&amp;nbsp;happen.&lt;/p&gt;</content><category term="aws"></category><category term="projects"></category><category term="ec2"></category></entry></feed>
