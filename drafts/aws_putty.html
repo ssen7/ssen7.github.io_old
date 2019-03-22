@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Awesomeness" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@svenkreiss" />
+    <meta name="twitter:creator" content="@svenkreiss" />
+    <meta name="twitter:title" content="Connect to AWS EC2 instance using Putty and run Jupyter notebook" />
+    <meta name="twitter:description" content="Awesomeness" />
+    <meta name="twitter:image:src" content="/images/home-bg.jpg" />
+    <meta name="twitter:domain" content="svenkreiss.com" />
+
+    <meta property="og:title" content="Connect to AWS EC2 instance using Putty and run Jupyter notebook" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Awesomeness" />
+    <meta property="og:image" content="/images/home-bg.jpg" />
+    <meta property="og:site_name" content="svenkreiss.com" />
+    <meta property="og:url" content="/drafts/aws_putty.html" />
+
+        <link rel="alternate"  href="/feeds/all.atom.xml" type="application/atom+xml" title="Saurav Sengupta Full Atom Feed"/>
+
+        <title>Connect to AWS EC2 instance using Putty and run Jupyter notebook - Saurav Sengupta</title>
+
+
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.css" integrity="sha384-VEnyslhHLHiYPca9KFkBB3CMeslnM9CzwjxsEbZTeA21JBm7tdLwKoZmCt3cZTYD" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.js" integrity="sha384-O4hpKqcplNCe+jLuBVEXC10Rn1QEqAmX98lKAIFBEDxZI0a+6Z2w2n8AEtQbR4CD" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/contrib/auto-render.min.js" integrity="sha384-IiI65aU9ZYub2MY9zhtKd1H2ps7xxf+eb2YFG9lX6uRqpXCvBTOidPRCXCrQ++Uc" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/theme/css/pure.css?v=0.1.0" />
+<link rel="stylesheet" href="/theme/css/pygments.css" />
+
+    <!-- for pelican_dynamic plugin -->
+    <!-- end pelican_dynamic -->
+
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <a href="/blog/author/saurav-sengupta/" title="See posts by Saurav Sengupta">
+                <img class="avatar" alt="Saurav Sengupta" src="https://www.gravatar.com/avatar/7886ef373056b9dbd24606c7162cc471?s=140">
+            </a>
+            <h2 class="article-info">Saurav Sengupta</h2>
+
+
+            <h5>Draft</h5>
+
+            <p class="article-date">March 23, 2019</p>
+
+            <a class="header-article-home" href="/blog/">&larr;Back to Blog</a>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Connect to <span class="caps">AWS</span> <span class="caps">EC2</span> instance using Putty and run Jupyter&nbsp;notebook</h1>
+                </header>
+            </section>
+
+            <p>This post originates from my frustrations while installing and working with Open Slide in a Windows machine. For some reason I could not get it to&nbsp;work.</p>
+<p>Since most packages for openslide-python, the package I required, are written for Linux, I needed a Linux machine. That and my hesitation to dual boot my laptop with Linux, made me look towards Amazon Web&nbsp;Services.</p>
+<p><span class="caps">AWS</span> provides free tier instances for <span class="caps">EC2</span> instances for free for a year after initial sign up. This was a good opportunity to use this free&nbsp;service.</p>
+<p>What I figured out was a very convoluted process to run a Jupyter notebook on a free linux&nbsp;machine.</p>
+<p>But hey, we are learning&nbsp;right?</p>
+<p>With that disclaimer out of the way, lets jump&nbsp;in.</p>
+<h3>Create an <span class="caps">AWS</span> <span class="caps">EC2</span>&nbsp;instance</h3>
+<p>Creating an <span class="caps">EC2</span> instance is as straightforward as logging into the <span class="caps">AWS</span> Console and choosing any of the free tier instances available. I chose to go for the most basic instance, since that would suffice for my&nbsp;needs.</p>
+<p>The tricky part however is connecting to <span class="caps">AWS</span> and running a Jupyter notebook through your Windows&nbsp;machine.</p>
+<p>Here comes Putty (horrible name) to the&nbsp;rescue.</p>
+<h3>Install&nbsp;Putty</h3>
+<p><a href="https://www.putty.org/">Download putty</a> and install it on your windows machine. Pretty standard&nbsp;stuff.</p>
+<h3>Connecting to <span class="caps">EC2</span> via&nbsp;Putty.</h3>
+<p>When you login to <span class="caps">AWS</span> Console and navigate to the <span class="caps">EC2</span> service, you will see something like&nbsp;this</p>
+<p><img src="/images/ec2-resources.png" width="500" title="blogs-snapshot" alt="blogs-snapshot"></p>
+<p>If you already have a key pair, then you should have saved it somewhere on your local system, since you cannot download it&nbsp;again. </p>
+<p>If you don&#8217;t, you can always create a new pair. Download the .pem file and save it to a folder in your local&nbsp;machine.</p>
+<p>We are doing all this since we need a public-private key pair to actually make a connection to <span class="caps">EC2</span> instance via <span class="caps">SSH</span>.</p>
+<h4>Convert .pem to .ppk file&nbsp;format</h4>
+<p>Since Putty cannot use .pem file format, we need to convert it to a useable&nbsp;format.</p>
+<p>Here is a good stack overflow answer to help you&nbsp;through.</p>
+<p><a href="https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format">https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format</a></p>
+<p>At the end of this you should have a public-private key pair saved safely in your local&nbsp;system.</p>
+<p>Now we can start configuring Putty to connect to our <span class="caps">EC2</span>&nbsp;instance.</p>
+<h3>Configuring&nbsp;Putty</h3>
+<p><img src="/images/putty_clean.png" width="500" title="putty clean" alt="putty clean"></p>
+<p>This is what Putty looks&nbsp;like.</p>
+<p>Lets&nbsp;start.</p>
+<ul>
+<li>Since I used <strong>&#8220;Amazon Linux 2 <span class="caps">AMI</span> (<span class="caps">HVM</span>)&#8221;</strong>, the <strong>host name</strong> field in the interface is ec2-user@[<span class="caps">IPV4</span> address]. <span class="caps">IPV4</span> address is the one I highlighted in the  picture below. Just select and&nbsp;copy.</li>
+</ul>
+<p><img src="/images/aws_ipv4.png" width="1000" title="aws ipv4" alt="aws ipv4"></p>
+<p>If you had used a Ubuntu instance, the host name would be ubuntu@[<span class="caps">IPV4</span>&nbsp;address].</p>
+<ul>
+<li>Go to Connection -&gt; <span class="caps">SSH</span> -&gt; Auth and paste the path of your private key (.ppk&nbsp;file).</li>
+</ul>
+<p><img src="/images/putty_auth.png" width="500" title="putty auth" alt="putty auth"></p>
+<p>This completes your basic&nbsp;setup.</p>
+<h3>Tunneling using&nbsp;Putty</h3>
+<p>This is the magic sauce that enable us to connect to Jupyter notebooks running on your <span class="caps">AWS</span> <span class="caps">EC2</span> instance and it is deceptively&nbsp;easy.</p>
+<p>In your Putty interface, go to Connection -&gt; <span class="caps">SSH</span> -&gt;&nbsp;Tunnels.</p>
+<p>Normally Jupyter notebooks start on port 8888. Therefore we configure port forwarding&nbsp;accordingly.</p>
+<p><img src="/images/putty_port.png" width="500" title="putty port" alt="putty port"></p>
+<p>After filling the above fields, click on <strong>Add</strong>.</p>
+<p>One last step is saving your Putty session, so that we do not have to go through this&nbsp;again.</p>
+<p>Go back to <strong>Session</strong> in the Putty <span class="caps">GUI</span>, and in the <strong>Saved Sessions</strong> field, you can name your session as aws_ec2 and click on <strong>Save</strong>.</p>
+<p>Now if you click <strong>Open</strong>, you should be able to connect to the bash terminal of your running <span class="caps">EC2</span>&nbsp;instance.</p>
+<p>It should look something like&nbsp;this.</p>
+<p><img src="/images/ec2_connect.png" width="500" title="ec2 port" alt="ec2 port"></p>
+<h2>Final&nbsp;Steps</h2>
+<p>Since you have access to the terminal of your <span class="caps">EC2</span> instance, go ahead download the Anaconda Linux installer&nbsp;-</p>
+<div class="highlight"><pre><span></span>wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+</pre></div>
+
+
+<p>Next install Anaconda&nbsp;-</p>
+<div class="highlight"><pre><span></span>bash Anaconda3-2018.12-Linux-x86_64.sh
+</pre></div>
+
+
+<p>This will install Jupyter and all other data science&nbsp;packages.</p>
+<p>Go ahead and launch your Jupyter notebook using&nbsp;-</p>
+<div class="highlight"><pre><span></span>jupyter notebook --no-browser
+</pre></div>
+
+
+<p>It will create <strong>localhost:8888</strong> url in the shell with the token id&nbsp;attached. </p>
+<p>Paste that on the browser in your computer and see magic&nbsp;happen.</p>
+
+            <p class="post-footer">
+                // filed
+under                <a class="post-category" href="/blog/tag/aws/">aws</a>
+                <a class="post-category" href="/blog/tag/projects/">projects</a>
+                in <a class="post-category"
+                    href="/blog/category/aws/">AWS</a>&nbsp;&nbsp;&nbsp;
+
+                <span style="display:inline-block;">
+                    // share on <a
+                        href="https://twitter.com/share?text=%22Connect%20to%20AWS%20EC2%20instance%20using%20Putty%20and%20run%20Jupyter%C2%A0notebook%3A%20Awesomeness%22&amp;hashtags=aws%2Cprojects"
+                        target="_blank">
+                        <i class="fa fa-twitter fa-lg"></i> Twitter
+                    </a>
+                </span>
+            </p>
+            <div class="hr"></div>
+
+
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Saurav Sengupta  2019 &ndash; 2019. Published with <a href="https://github.com/getpelican/pelican">Pelican</a>.<br /></p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        renderMathInElement(document.body);
+    </script>
+
+    <!-- for pelican_dynamic plugin -->
+
+
+
+</body>
+</html>
