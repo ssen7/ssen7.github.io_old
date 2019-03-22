@@ -1,10 +1,10 @@
 Title: Making the website using Pelican and GitHub: Part 1
-Date: 2019-03-21
+Date: 2019-03-22
 Category: builds
 Tags: pelican, python
 Slug: making_the_blog
 Author: Saurav Sengupta
-Summary: Part 1 of steps to create a website using Pelican and Github.
+Summary: Part 1 of steps to create a website using Pelican and GitHub. It covers making a basic Pelican blog.
 Status: published
 
 <!-- ### Making the blog -->
@@ -111,6 +111,8 @@ make html && make serve
 ```
 
 It should be up on [http://localhost:8000](http://localhost:8000).
+
+{% img /images/default_theme_pelican.png 1500 default blog theme %}
 
 
 ### Publishing to GitHub
