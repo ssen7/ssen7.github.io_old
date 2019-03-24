@@ -15,7 +15,8 @@ I am motivated by the idea of building accessible pieces of technology that assi
 
 In my free time, I explore ways technology is affecting us as humans. Also, I am into science fiction and fantasy! The [Nexus Trilogy](http://rameznaam.com/Nexus/) by Ramez Naam remains an all time favorite. And almost all the books by [Brandon Sanderson](https://www.goodreads.com/book/show/7235533-the-way-of-kings).
 
-You can find my updated [CV](/files/cv.pdf) here (pdf).
+You can find my updated [CV here](/files/cv.pdf) (pdf), my projects [here](/projects.html) and the blog [here](/blog), where I write about my forays into data science and explore the various tools and technologies I've learnt over the course of my career.
+
 ### Contact:
 * Email: <sauravsengupta7@gmail.com>
 * Phone: +1 434 284 3794

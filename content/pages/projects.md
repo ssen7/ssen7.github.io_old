@@ -8,12 +8,23 @@ Summary: Projects by Saurav Sengupta.
 Status: published
 
 ## Building CNNs to classify duodenal biopsy images into diseases – Child Health Research Center, UVA
-* We use **Convolutional Neural Networks** (CNN) to classify high resolution digitized biopsy images into Celiac Disease, Environmental Enteropathy and Normal tissues. 
-* We are using existing architectures like Resnet34 and Resnet50 in our analysis, since they are the deep and perform well on a diverse set of images. 
-* We use the fabulous **fastai** library.
+* Used Convolutional Neural Networks **(CNN)** to classify high resolution digitized biopsy images into Celiac Disease, Environmental Enteropathy and Normal tissues. 
+* Used pretrained **Resnet50** in our analysis, performs well on diverse set of images.
+* Achieved close to 98% biopsy level accuracy. Paper accepted in **IEEE BHI 2019 conference at Chicago, Illinois**.
+* Backed by the **Bill and Melinda Gates Foundation** and **Aga Khan University**.
 * We are also using metabolomics data to find important features of classification.
-* Funded and supported by the **Bill and Melinda Gates Foundation** and the **Aga Khan University**.
 * [GitHub](https://github.com/UVA-DSI-2019-Capstones/CHRC).
+
+## Music Genre classification
+* Classification of songs into one of 13 genres like rock/pop and country etc. Using **ensemble models** for song features and lyrical data.
+* Song data features available from [AWS Public Dataset](https://aws.amazon.com/datasets/million-song-dataset/). Used genre data from different Kaggle datasets.
+* Created AWS EC2 instance, mounted snapshot, ran Jupyter notebooks on EC2 to get data. (Find out more [here](https://ssen7.github.io/blog/aws_putty/))
+* Used **Random Forests, SVM, Naïve Bayes** for model using song features. Used **tf-idf** and **topic modeling** for lyrical data. 
+* Ensembled both these models. Around 58.06% accuracy, close to the [state of art](https://ieeexplore.ieee.org/document/1021072) of 61% but we classify more genres.
+* [GitHub](https://github.com/ssen7/sys6018-final-project)
+
+## Modeling brainwave activity using Muse™ headset
+* Used **Logistic Regression** for real time classification of brain wave signals like alpha waves into left-right, up-down motion. Tested model by moving objects in a game environment.
 
 ## (Ongoing) Self Drawing Agent (Reinforcement Learning Project)
 
@@ -32,18 +43,5 @@ Status: published
 * The data we will be using for this project is [Distracted Driving imageset](https://www.kaggle.com/c/state-farm-distracted-driver-detection/data) from StateFarm. 
 * Use a BNN to model the data. BNN extends the standard neural nets by using Bayesian inference to make better estimates of weights and biases.
 
-## Music Genre classification
-* Created **EC2 AWS** instance to get data from the [Million Song Dataset](https://aws.amazon.com/datasets/million-song-dataset/). 
-* Wrote scripts to get data from **S3 bucket** and run Jupyter notebooks on EC2.
-* Used **Text Mining** on song lyrics and song features to predict 13 different genre types. Used feature selection to reduce the number of features and reduce overfitting. 58.6% Accuracy. 
-* [GitHub](https://github.com/ssen7/sys6018-final-project).
-
-## Modeling brainwave activity
-* Used **Muse™ headset** to collect brain activity data in the form of frequency measurements of alpha, beta, gamma, delta and theta waves to classify actions like moving hands, motor imagination.
-* Found correlation between alpha waves and motion. 
-* Used **Logistic Regression** for real time modeling and classification of thought and used it to move object in a mobile game environment.
-
-## Modeling quality of barbell lifts using accelerometer data
-* The goal was to use data from accelerometers on the belt, forearm, arm, and dumbbell of 6 participants, to predict how well they do barbell lifts.
-* Tested accuracy of models built using **Tree Algorithm**, **Random Forest**, and **Model Stacking** using the **caret** package in R. 
-* [GitHub Pages](https://ssen7.github.io/practical-machine-learning-coursera/) Link.
+## (Ongoing) Predict the stock price in one sector using events in stock price of another sector
+ 
