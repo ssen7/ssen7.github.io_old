@@ -13,7 +13,7 @@ Since most packages for openslide-python, the package I required, are written fo
 
 AWS provides free tier instances for EC2 instances for free for a year after initial sign up. This was a good opportunity to use this free service.
 
-What I figured out was a very convoluted process to run a Jupyter notebook on a free linux machine.
+What I figured out was a very convoluted process to run a Jupyter notebook on a free Linux machine.
 
 But hey, we are learning right?
 
