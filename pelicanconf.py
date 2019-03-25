@@ -125,7 +125,7 @@ INTERNAL = False
 COVER_IMG_URL = '/images/home-bg.jpg'
 AUTHOR_EMAIL = 'sauravsengupta7@gmail.com'
 AUTHOR_IMAGE = '/images/download.jpg'
-TAGLINE = 'Software Developer turned Data Scientist. Masters of Data Science at the University of Virginia.'
+TAGLINE = 'Software Developer turned Data Scientist. Masters in Data Science at the University of Virginia.'
 META_DESCRIPTION = 'my personal website'
 
 DISQUS_SITENAME = 'ssen7-github-io'
