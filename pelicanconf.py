@@ -68,6 +68,7 @@ PLUGINS = [
     'pelican-cite',
     'related_posts',
     'pelican_dynamic',
+    # 'disqus_static',
     # 'better_figures_and_images',
     # 'minchin.pelican.plugins.image_process',
     # 'pelican_advance_embed_tweet',
@@ -124,9 +125,15 @@ INTERNAL = False
 COVER_IMG_URL = '/images/home-bg.jpg'
 AUTHOR_EMAIL = 'sauravsengupta7@gmail.com'
 AUTHOR_IMAGE = '/images/download.jpg'
-TAGLINE = 'Software Developer turned Data Scientist. Masters of Data Science at the University of Virginia'
+TAGLINE = 'Software Developer turned Data Scientist. Masters of Data Science at the University of Virginia.'
 META_DESCRIPTION = 'my personal website'
-# DISQUS_SITENAME = 'ssen7'
+
+DISQUS_SITENAME = 'ssen7-github-io'
+# DISQUS_SECRET_KEY = u'YOUR_SECRET_KEY'
+# DISQUS_PUBLIC_KEY = u'YOUR_PUBLIC_KEY'
+PAGE_URL = ''
+PAGE_IDENTIFIER = '{slug}'
+
 COPYRIGHT_YEARS = '2019 &ndash; 2019'
 COPYRIGHT_FOOTER = (
     '<p>'
