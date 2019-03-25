@@ -162,7 +162,7 @@ pre {
 }
 
 .social {
-    display: inline-block;
+    display: block;
     margin-left: 15px;
 }
 .social a {
