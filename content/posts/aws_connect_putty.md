@@ -1,10 +1,10 @@
 Title:Run Jupyter notebook on AWS EC2 using Putty
-Date: 2019-03-22
+Date: 2019-03-25
 Category: AWS
 Tags: aws, projects, ec2
 Slug: aws_putty
 Author: Saurav Sengupta
-Summary: Awesomeness.
+Summary: Steps to run Jupyter notebooks on EC2 machine. Handy when you don't want to use Sagemaker and install your own packages.
 Status: published
 
 This post originates from my frustrations while installing and working with Open Slide in a Windows machine. For some reason I could not get it to work.

@@ -20,7 +20,7 @@ Status: published
 * Song data features available from [AWS Public Dataset](https://aws.amazon.com/datasets/million-song-dataset/). Used genre data from different Kaggle datasets.
 * Created AWS EC2 instance, mounted snapshot, ran Jupyter notebooks on EC2 to get data. (Find out more [here](https://ssen7.github.io/blog/aws_putty/))
 * Used **Random Forests, SVM, Naïve Bayes** for model using song features. Used **tf-idf** and **topic modeling** for lyrical data. 
-* Ensembled both these models. Around 58.06% accuracy, close to the [state of art](https://ieeexplore.ieee.org/document/1021072) of 61% but we classify more genres.
+* Ensembled both these models. Around 58.06% accuracy, close to the [original paper on music classification](https://ieeexplore.ieee.org/document/1021072) of 61% but we classify more genres and on more data.
 * [GitHub](https://github.com/ssen7/sys6018-final-project)
 
 ## Modeling brainwave activity using Muse™ headset
