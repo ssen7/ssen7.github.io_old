@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2019-03-25T15:51:54-00:00</lastmod>
+<lastmod>2019-03-26T00:40:38-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -33,7 +33,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/aws_putty/</loc>
-<lastmod>2019-03-22T00:00:00-04:00</lastmod>
+<lastmod>2019-03-25T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -61,7 +61,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/category/aws/</loc>
-<lastmod>2019-03-22T00:00:00-04:56</lastmod>
+<lastmod>2019-03-25T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,21 +82,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/tag/aws/</loc>
-<lastmod>2019-03-22T00:00:00-04:56</lastmod>
+<lastmod>2019-03-25T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/blog/tag/projects/</loc>
-<lastmod>2019-03-22T00:00:00-04:56</lastmod>
+<lastmod>2019-03-25T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/blog/tag/ec2/</loc>
-<lastmod>2019-03-22T00:00:00-04:56</lastmod>
+<lastmod>2019-03-25T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -124,7 +124,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/blog/author/saurav-sengupta/</loc>
-<lastmod>2019-03-22T00:00:00-04:56</lastmod>
+<lastmod>2019-03-25T00:00:00-04:56</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
