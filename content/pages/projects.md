@@ -35,6 +35,8 @@ Status: published
 * Use Neural Network based classification to build our reward function. Our reward function should be able to capture not just a single image equivalent of a number but also the variance in original dataset and use that variance to recreate multiple image equivalents for each number. 
 * Inspired by previous work undertaken by **[DeepMind](https://deepmind.com/blog/learning-to-generate-images)** where they trained a robot to create images and train a virtual agent to draw the images.
 
+{% img /images/awesomeness.gif 200 blogs-snapshot %}
+
 ## (Ongoing) Distracted driver image recognition using Bayesian Neural Networks
 
 * Systems that can detect if a driver is still attentive enough can add to security. 
