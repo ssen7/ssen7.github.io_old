@@ -30,7 +30,7 @@ SOCIAL = (
     ('github', 'https://github.com/ssen7/'),
     ('twitter', 'https://twitter.com/sauravsen111'),
     ('linkedin', 'https://www.linkedin.com/in/saurav-sengupta/'),
-    ('file-text', '/files/SauravSenguptaCV2019.pdf'),
+    ('file-text', '/files/cv.pdf'),
     ('rss', '/feeds/all.atom.xml'),
 )
 TWITTER_USERNAME = 'sauravsen111'
