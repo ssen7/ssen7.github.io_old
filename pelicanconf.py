@@ -25,6 +25,9 @@ LINKS = (
     ('unicodeit.net', 'http://www.unicodeit.net'),
 )
 
+# Google Analytics
+GOOGLE_ANALYTICS = 'UA-143413428-1'
+
 # Social widget
 SOCIAL = (
     ('github', 'https://github.com/ssen7/'),

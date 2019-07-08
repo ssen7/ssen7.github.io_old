@@ -37,7 +37,7 @@ Status: published
 * Bayesian Neural Nets (BNN) incorporate a measure of uncertainty that can be important in decision making systems.
 * The data we will be using for this project is [Distracted Driving imageset](https://www.kaggle.com/c/state-farm-distracted-driver-detection/data) from StateFarm. 
 * Use a BNN to model the data. BNN extends the standard neural nets by using Bayesian inference to make better estimates of weights and biases.
-  
+
 ## Music Genre classification
 * Classification of songs into one of 13 genres like rock/pop and country etc. Using **ensemble models** for song features and lyrical data.
 * Song data features available from [AWS Public Dataset](https://aws.amazon.com/datasets/million-song-dataset/). Used genre data from different Kaggle datasets.
