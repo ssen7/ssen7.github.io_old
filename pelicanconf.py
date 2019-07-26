@@ -125,10 +125,10 @@ IMAGE_PROCESS = {
 # my pure theme specific
 INTERNAL = False
 # USE_LOCAL_ASSETS = True
-COVER_IMG_URL = '/images/home-bg.jpg'
+COVER_IMG_URL = '/images/home-bg-2.jpg'
 AUTHOR_EMAIL = 'sauravsengupta7@gmail.com'
 AUTHOR_IMAGE = '/images/download.jpg'
-TAGLINE = 'Software Developer turned Data Scientist. Masters in Data Science at the University of Virginia.'
+TAGLINE = 'Software Developer turned Data Scientist.'
 META_DESCRIPTION = 'my personal website'
 
 DISQUS_SITENAME = 'ssen7-github-io'
